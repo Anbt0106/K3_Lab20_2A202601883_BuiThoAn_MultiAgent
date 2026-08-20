@@ -111,6 +111,15 @@ Cách khắc phục (chọn 1 trong 3):
 
 ## Exit ticket
 
+### Submission answer
+
+1. Nên dùng multi-agent khi bài toán có nhiều trách nhiệm tách biệt, chẳng hạn tìm kiếm
+   nguồn, phân tích bằng chứng và viết câu trả lời. Tách Researcher, Analyst và Writer
+   giúp handoff rõ ràng, trace dễ debug và kiểm soát được từng bước.
+2. Không nên dùng multi-agent cho câu hỏi đơn giản hoặc yêu cầu phản hồi cực nhanh.
+   Single-agent chỉ cần một lần gọi LLM nên thường có latency, chi phí và số điểm lỗi
+   thấp hơn.
+
 Mỗi nhóm trả lời 2 câu:
 
 1. Case nào nên dùng multi-agent? Vì sao?

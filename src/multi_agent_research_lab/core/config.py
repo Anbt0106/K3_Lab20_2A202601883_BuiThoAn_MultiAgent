@@ -18,12 +18,16 @@ class Settings(BaseSettings):
     log_level: str = Field(default="INFO", validation_alias="LOG_LEVEL")
 
     openai_api_key: str | None = Field(default=None, validation_alias="OPENAI_API_KEY")
+    openai_base_url: str = Field(
+        default="https://api.openai.com/v1", validation_alias="OPENAI_BASE_URL"
+    )
     openai_model: str = Field(default="gpt-4o-mini", validation_alias="OPENAI_MODEL")
 
     langsmith_api_key: str | None = Field(default=None, validation_alias="LANGSMITH_API_KEY")
     langsmith_project: str = Field(
         default="multi-agent-research-lab", validation_alias="LANGSMITH_PROJECT"
     )
+    langsmith_tracing: bool = Field(default=False, validation_alias="LANGSMITH_TRACING")
 
     langfuse_public_key: str | None = Field(default=None, validation_alias="LANGFUSE_PUBLIC_KEY")
     langfuse_secret_key: str | None = Field(default=None, validation_alias="LANGFUSE_SECRET_KEY")
@@ -32,6 +36,9 @@ class Settings(BaseSettings):
     )
 
     tavily_api_key: str | None = Field(default=None, validation_alias="TAVILY_API_KEY")
+    offline_corpus_dir: str = Field(
+        default="ai_agent_offline_research_corpus_v2", validation_alias="OFFLINE_CORPUS_DIR"
+    )
 
     max_iterations: int = Field(default=6, ge=1, le=20, validation_alias="MAX_ITERATIONS")
     timeout_seconds: int = Field(default=60, ge=5, le=600, validation_alias="TIMEOUT_SECONDS")
